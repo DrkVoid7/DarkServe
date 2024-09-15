@@ -43,7 +43,7 @@ else if(body.token != data.staff_info.token){
   return
 }
 else{
-  await User.updateOne({username: body.username}, {$set:{contact:{
+  await User.updateOne({username: body.username}, {$set:{is_edited:true,contact:{
     f_name: body.f_name,
     l_name: body.l_name,
     phone: body.number,
