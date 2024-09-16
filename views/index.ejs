@@ -1,188 +1,1033 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="favicon.png" type="image/x-icon">
-<title>DarkServe - Staff Registration</title>
-<link rel="stylesheet" href="support.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <title>Dark Serve - Registration Forum</title>
+    <link rel="stylesheet" href="support.css" />
+  </head>
+
+  <body>
     <div class="box">
-        <h1 class="form_headline">Registration Forum</h1>
-        <form class="form_box" action="/signup" method="post" novalidate>
-            
-            <span class="two_block">
-                <input type="text" name="f_name" id="first_name" required pattern="[a-zA-Z]{3,12}"  placeholder="First Name *" >
-                <input type="text" name="l_name" id="last_name" placeholder="Last Name" >
-            </span>
-            <span class="two_block">
-                <input type="text" name="username" id="username" required pattern="[a-zA-Z0-9.]{3,30}" placeholder="Username *" >
-                <input type="text" name="token" id="token" required placeholder="Token *">
-            </span>
-            <input type="email" name="email" id="email" required placeholder="Email *">
-            <span class="two_block t2">
-                <span class="country" >
-                    <div class="type_selector">
-                        <span class="selected"><p>country *</p></span>
-                        <img id="options-image" src="svg/arrow.svg" alt="">
-                    </div>
-                    <div class="options-mask option-mask-hidden">
-                        <div class="options">
-                            <span class="option" data-value="usa" ><img class="opi" src="svg/usa.svg" alt=""> <p class="opi-p">USA</p></span>
-                            <span class="option" data-value="india" ><img class="opi" src="svg/ind.svg"  alt=""> <p class="opi-p">India</p></span>
-                            <span class="option" data-value="canada" ><img class="opi" src="svg/can.svg"  alt=""> <p class="opi-p">Canada</p></span>
-                            <span class="option" data-value="japan" ><img class="opi" src="svg/jpn.svg"  alt=""> <p class="opi-p">Japan</p></span>
-                            <span class="option" data-value="china" ><img class="opi" src="svg/chn.svg"  alt=""> <p class="opi-p">China</p></span>
-    
-                        </div>
-                    </div>
+      <h1 class="form_headline">Registration Forum</h1>
+      <form class="form_box" action="/signup" method="post" novalidate>
+        <span class="two_block">
+          <input
+            type="text"
+            name="f_name"
+            id="first_name"
+            required
+            pattern="[a-zA-Z]{3,12}"
+            placeholder="First Name *"
+          />
+          <input
+            type="text"
+            name="l_name"
+            id="last_name"
+            placeholder="Last Name"
+          />
+        </span>
+        <span class="two_block">
+          <input
+            type="text"
+            name="username"
+            id="username"
+            required
+            pattern="[a-zA-Z0-9.]{3,30}"
+            placeholder="Username *"
+          />
+          <input
+            type="text"
+            name="token"
+            id="token"
+            required
+            placeholder="Token *"
+          />
+        </span>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          placeholder="Email *"
+        />
+        <span class="two_block t2">
+          <span class="country">
+            <div class="type_selector">
+              <span class="selected">
+                <p>country *</p>
+              </span>
+              <img id="options-image" src="svg/arrow.svg" alt="" />
+            </div>
+            <div class="options-mask option-mask-hidden">
+              <div class="options">
+                <span class="option" data-value="afghanistan"
+                  ><img class="opi" src="svg/afg.svg" alt="" />
+                  <p class="opi-p">Afghanistan</p>
                 </span>
-                <input hidden type="text" data-error="<%= error %>" data-f_name="<%= f_name %>" data-l_name="<%= l_name %>" data-username="<%= username %>" data-token="<%= token %>" data-email="<%= email %>"  data-number="<%= number %>" data-desc="<%= desc %>" name="c" id="c" >
-                <input type="text" id="number" name="number" pattern="[0-9]{10, 13}" placeholder="Contact Number">
-            </span>
-            <span class="two_block">
-                <input type="text" name="p1" id="p1" required pattern="[a-zA-Z ]{3,30}"  placeholder="Profession 1 *" >
-                <input type="text" name="p2" id="p2"  pattern="[a-zA-Z ]{3,30}" placeholder="Profession 2">
-            </span>
-            <span class="two_block">
-                <input type="text" name="p3" id="p3"  pattern="[a-zA-Z ]{3,30}"  placeholder="Profession 3" >
-                <input type="text" name="p4" id="p4"  pattern="[a-zA-Z ]{3,30}" placeholder="Profession 4">
-            </span>
-            <textarea name="Description" id="desc" rows="5" placeholder="Description *" required pattern="[a-zA-Z0-9]{3,12}"></textarea>
-           
-        </form>
-        <button class="form_submit" onclick="submit_form()">Submit form</button>
-        <p class="form_more"> </p>
+                <span class="option" data-value="albania"
+                  ><img class="opi" src="svg/alb.svg" alt="" />
+                  <p class="opi-p">Albania</p>
+                </span>
+                <span class="option" data-value="algeria"
+                  ><img class="opi" src="svg/dza.svg" alt="" />
+                  <p class="opi-p">Algeria</p>
+                </span>
+                <span class="option" data-value="andorra"
+                  ><img class="opi" src="svg/and.svg" alt="" />
+                  <p class="opi-p">Andorra</p>
+                </span>
+                <span class="option" data-value="angola"
+                  ><img class="opi" src="svg/ago.svg" alt="" />
+                  <p class="opi-p">Angola</p>
+                </span>
+                <span class="option" data-value="argentina"
+                  ><img class="opi" src="svg/arg.svg" alt="" />
+                  <p class="opi-p">Argentina</p>
+                </span>
+                <span class="option" data-value="armenia"
+                  ><img class="opi" src="svg/arm.svg" alt="" />
+                  <p class="opi-p">Armenia</p>
+                </span>
+                <span class="option" data-value="australia"
+                  ><img class="opi" src="svg/aus.svg" alt="" />
+                  <p class="opi-p">Australia</p>
+                </span>
+                <span class="option" data-value="austria"
+                  ><img class="opi" src="svg/aut.svg" alt="" />
+                  <p class="opi-p">Austria</p>
+                </span>
+                <span class="option" data-value="azerbaijan"
+                  ><img class="opi" src="svg/aze.svg" alt="" />
+                  <p class="opi-p">Azerbaijan</p>
+                </span>
+                <span class="option" data-value="bahamas"
+                  ><img class="opi" src="svg/bhs.svg" alt="" />
+                  <p class="opi-p">Bahamas</p>
+                </span>
+                <span class="option" data-value="bahrain"
+                  ><img class="opi" src="svg/bhr.svg" alt="" />
+                  <p class="opi-p">Bahrain</p>
+                </span>
+                <span class="option" data-value="bangladesh"
+                  ><img class="opi" src="svg/bgd.svg" alt="" />
+                  <p class="opi-p">Bangladesh</p>
+                </span>
+                <span class="option" data-value="barbados"
+                  ><img class="opi" src="svg/brb.svg" alt="" />
+                  <p class="opi-p">Barbados</p>
+                </span>
+                <span class="option" data-value="belarus"
+                  ><img class="opi" src="svg/blr.svg" alt="" />
+                  <p class="opi-p">Belarus</p>
+                </span>
+                <span class="option" data-value="belgium"
+                  ><img class="opi" src="svg/bel.svg" alt="" />
+                  <p class="opi-p">Belgium</p>
+                </span>
+                <span class="option" data-value="belize"
+                  ><img class="opi" src="svg/blz.svg" alt="" />
+                  <p class="opi-p">Belize</p>
+                </span>
+                <span class="option" data-value="benin"
+                  ><img class="opi" src="svg/ben.svg" alt="" />
+                  <p class="opi-p">Benin</p>
+                </span>
+                <span class="option" data-value="bhutan"
+                  ><img class="opi" src="svg/btn.svg" alt="" />
+                  <p class="opi-p">Bhutan</p>
+                </span>
+                <span class="option" data-value="bolivia"
+                  ><img class="opi" src="svg/bol.svg" alt="" />
+                  <p class="opi-p">Bolivia</p>
+                </span>
+                <span class="option" data-value="bosnia_and_herzegovina"
+                  ><img class="opi" src="svg/bih.svg" alt="" />
+                  <p class="opi-p">Bosnia and Herzegovina</p>
+                </span>
+                <span class="option" data-value="botswana"
+                  ><img class="opi" src="svg/bwa.svg" alt="" />
+                  <p class="opi-p">Botswana</p>
+                </span>
+                <span class="option" data-value="brazil"
+                  ><img class="opi" src="svg/bra.svg" alt="" />
+                  <p class="opi-p">Brazil</p>
+                </span>
+                <span class="option" data-value="brunei"
+                  ><img class="opi" src="svg/brn.svg" alt="" />
+                  <p class="opi-p">Brunei</p>
+                </span>
+                <span class="option" data-value="bulgaria"
+                  ><img class="opi" src="svg/bgr.svg" alt="" />
+                  <p class="opi-p">Bulgaria</p>
+                </span>
+                <span class="option" data-value="burkina_faso"
+                  ><img class="opi" src="svg/bfa.svg" alt="" />
+                  <p class="opi-p">Burkina Faso</p>
+                </span>
+                <span class="option" data-value="burundi"
+                  ><img class="opi" src="svg/bdi.svg" alt="" />
+                  <p class="opi-p">Burundi</p>
+                </span>
+                <span class="option" data-value="cambodia"
+                  ><img class="opi" src="svg/khm.svg" alt="" />
+                  <p class="opi-p">Cambodia</p>
+                </span>
+                <span class="option" data-value="cameroon"
+                  ><img class="opi" src="svg/cmr.svg" alt="" />
+                  <p class="opi-p">Cameroon</p>
+                </span>
+                <span class="option" data-value="canada"
+                  ><img class="opi" src="svg/can.svg" alt="" />
+                  <p class="opi-p">Canada</p>
+                </span>
+                <span class="option" data-value="cape_verde"
+                  ><img class="opi" src="svg/cpv.svg" alt="" />
+                  <p class="opi-p">Cape Verde</p>
+                </span>
+                <span class="option" data-value="central_african_republic"
+                  ><img class="opi" src="svg/caf.svg" alt="" />
+                  <p class="opi-p">Central African Republic</p>
+                </span>
+                <span class="option" data-value="chad"
+                  ><img class="opi" src="svg/tcd.svg" alt="" />
+                  <p class="opi-p">Chad</p>
+                </span>
+                <span class="option" data-value="chile"
+                  ><img class="opi" src="svg/chl.svg" alt="" />
+                  <p class="opi-p">Chile</p>
+                </span>
+                <span class="option" data-value="china"
+                  ><img class="opi" src="svg/chn.svg" alt="" />
+                  <p class="opi-p">China</p>
+                </span>
+                <span class="option" data-value="colombia"
+                  ><img class="opi" src="svg/col.svg" alt="" />
+                  <p class="opi-p">Colombia</p>
+                </span>
+                <span class="option" data-value="comoros"
+                  ><img class="opi" src="svg/com.svg" alt="" />
+                  <p class="opi-p">Comoros</p>
+                </span>
+                <span class="option" data-value="congo"
+                  ><img class="opi" src="svg/cog.svg" alt="" />
+                  <p class="opi-p">Congo</p>
+                </span>
+                <span class="option" data-value="costa_rica"
+                  ><img class="opi" src="svg/cri.svg" alt="" />
+                  <p class="opi-p">Costa Rica</p>
+                </span>
+                <span class="option" data-value="croatia"
+                  ><img class="opi" src="svg/hrv.svg" alt="" />
+                  <p class="opi-p">Croatia</p>
+                </span>
+                <span class="option" data-value="cuba"
+                  ><img class="opi" src="svg/cub.svg" alt="" />
+                  <p class="opi-p">Cuba</p>
+                </span>
+                <span class="option" data-value="cyprus"
+                  ><img class="opi" src="svg/cyp.svg" alt="" />
+                  <p class="opi-p">Cyprus</p>
+                </span>
+                <span class="option" data-value="czech_republic"
+                  ><img class="opi" src="svg/cze.svg" alt="" />
+                  <p class="opi-p">Czech Republic</p>
+                </span>
+                <span class="option" data-value="denmark"
+                  ><img class="opi" src="svg/dnk.svg" alt="" />
+                  <p class="opi-p">Denmark</p>
+                </span>
+                <span class="option" data-value="djibouti"
+                  ><img class="opi" src="svg/dji.svg" alt="" />
+                  <p class="opi-p">Djibouti</p>
+                </span>
+                <span class="option" data-value="dominica"
+                  ><img class="opi" src="svg/dma.svg" alt="" />
+                  <p class="opi-p">Dominica</p>
+                </span>
+                <span class="option" data-value="dominican_republic"
+                  ><img class="opi" src="svg/dom.svg" alt="" />
+                  <p class="opi-p">Dominican Republic</p>
+                </span>
+                <span class="option" data-value="ecuador"
+                  ><img class="opi" src="svg/ecu.svg" alt="" />
+                  <p class="opi-p">Ecuador</p>
+                </span>
+                <span class="option" data-value="egypt"
+                  ><img class="opi" src="svg/egy.svg" alt="" />
+                  <p class="opi-p">Egypt</p>
+                </span>
+                <span class="option" data-value="el_salvador"
+                  ><img class="opi" src="svg/slv.svg" alt="" />
+                  <p class="opi-p">El Salvador</p>
+                </span>
+                <span class="option" data-value="equatorial_guinea"
+                  ><img class="opi" src="svg/gnq.svg" alt="" />
+                  <p class="opi-p">Equatorial Guinea</p>
+                </span>
+                <span class="option" data-value="eritrea"
+                  ><img class="opi" src="svg/eri.svg" alt="" />
+                  <p class="opi-p">Eritrea</p>
+                </span>
+                <span class="option" data-value="estonia"
+                  ><img class="opi" src="svg/est.svg" alt="" />
+                  <p class="opi-p">Estonia</p>
+                </span>
+                <span class="option" data-value="eswatini"
+                  ><img class="opi" src="svg/swz.svg" alt="" />
+                  <p class="opi-p">Eswatini</p>
+                </span>
+                <span class="option" data-value="ethiopia"
+                  ><img class="opi" src="svg/eth.svg" alt="" />
+                  <p class="opi-p">Ethiopia</p>
+                </span>
+                <span class="option" data-value="fiji"
+                  ><img class="opi" src="svg/fji.svg" alt="" />
+                  <p class="opi-p">Fiji</p>
+                </span>
+                <span class="option" data-value="finland"
+                  ><img class="opi" src="svg/fin.svg" alt="" />
+                  <p class="opi-p">Finland</p>
+                </span>
+                <span class="option" data-value="france"
+                  ><img class="opi" src="svg/fra.svg" alt="" />
+                  <p class="opi-p">France</p>
+                </span>
+                <span class="option" data-value="gabon"
+                  ><img class="opi" src="svg/gab.svg" alt="" />
+                  <p class="opi-p">Gabon</p>
+                </span>
+                <span class="option" data-value="gambia"
+                  ><img class="opi" src="svg/gmb.svg" alt="" />
+                  <p class="opi-p">Gambia</p>
+                </span>
+                <span class="option" data-value="georgia"
+                  ><img class="opi" src="svg/geo.svg" alt="" />
+                  <p class="opi-p">Georgia</p>
+                </span>
+                <span class="option" data-value="germany"
+                  ><img class="opi" src="svg/deu.svg" alt="" />
+                  <p class="opi-p">Germany</p>
+                </span>
+                <span class="option" data-value="ghana"
+                  ><img class="opi" src="svg/gha.svg" alt="" />
+                  <p class="opi-p">Ghana</p>
+                </span>
+                <span class="option" data-value="greece"
+                  ><img class="opi" src="svg/grc.svg" alt="" />
+                  <p class="opi-p">Greece</p>
+                </span>
+                <span class="option" data-value="grenada"
+                  ><img class="opi" src="svg/grd.svg" alt="" />
+                  <p class="opi-p">Grenada</p>
+                </span>
+                <span class="option" data-value="guatemala"
+                  ><img class="opi" src="svg/gtm.svg" alt="" />
+                  <p class="opi-p">Guatemala</p>
+                </span>
+                <span class="option" data-value="guinea"
+                  ><img class="opi" src="svg/gin.svg" alt="" />
+                  <p class="opi-p">Guinea</p>
+                </span>
+                <span class="option" data-value="guinea_bissau"
+                  ><img class="opi" src="svg/gnb.svg" alt="" />
+                  <p class="opi-p">Guinea-Bissau</p>
+                </span>
+                <span class="option" data-value="guyana"
+                  ><img class="opi" src="svg/guy.svg" alt="" />
+                  <p class="opi-p">Guyana</p>
+                </span>
+                <span class="option" data-value="haiti"
+                  ><img class="opi" src="svg/hti.svg" alt="" />
+                  <p class="opi-p">Haiti</p>
+                </span>
+                <span class="option" data-value="honduras"
+                  ><img class="opi" src="svg/hnd.svg" alt="" />
+                  <p class="opi-p">Honduras</p>
+                </span>
+                <span class="option" data-value="hungary"
+                  ><img class="opi" src="svg/hun.svg" alt="" />
+                  <p class="opi-p">Hungary</p>
+                </span>
+                <span class="option" data-value="iceland"
+                  ><img class="opi" src="svg/isl.svg" alt="" />
+                  <p class="opi-p">Iceland</p>
+                </span>
+                <span class="option" data-value="india"
+                  ><img class="opi" src="svg/ind.svg" alt="" />
+                  <p class="opi-p">India</p>
+                </span>
+                <span class="option" data-value="indonesia"
+                  ><img class="opi" src="svg/idn.svg" alt="" />
+                  <p class="opi-p">Indonesia</p>
+                </span>
+                <span class="option" data-value="iran"
+                  ><img class="opi" src="svg/irn.svg" alt="" />
+                  <p class="opi-p">Iran</p>
+                </span>
+                <span class="option" data-value="iraq"
+                  ><img class="opi" src="svg/irq.svg" alt="" />
+                  <p class="opi-p">Iraq</p>
+                </span>
+                <span class="option" data-value="ireland"
+                  ><img class="opi" src="svg/irl.svg" alt="" />
+                  <p class="opi-p">Ireland</p>
+                </span>
+                <span class="option" data-value="israel"
+                  ><img class="opi" src="svg/isr.svg" alt="" />
+                  <p class="opi-p">Israel</p>
+                </span>
+                <span class="option" data-value="italy"
+                  ><img class="opi" src="svg/ita.svg" alt="" />
+                  <p class="opi-p">Italy</p>
+                </span>
+                <span class="option" data-value="jamaica"
+                  ><img class="opi" src="svg/jam.svg" alt="" />
+                  <p class="opi-p">Jamaica</p>
+                </span>
+                <span class="option" data-value="japan"
+                  ><img class="opi" src="svg/jpn.svg" alt="" />
+                  <p class="opi-p">Japan</p>
+                </span>
+                <span class="option" data-value="jordan"
+                  ><img class="opi" src="svg/jor.svg" alt="" />
+                  <p class="opi-p">Jordan</p>
+                </span>
+                <span class="option" data-value="kazakhstan"
+                  ><img class="opi" src="svg/kaz.svg" alt="" />
+                  <p class="opi-p">Kazakhstan</p>
+                </span>
+                <span class="option" data-value="kenya"
+                  ><img class="opi" src="svg/ken.svg" alt="" />
+                  <p class="opi-p">Kenya</p>
+                </span>
+                <span class="option" data-value="kiribati"
+                  ><img class="opi" src="svg/kir.svg" alt="" />
+                  <p class="opi-p">Kiribati</p>
+                </span>
+                <span class="option" data-value="korea_north"
+                  ><img class="opi" src="svg/prk.svg" alt="" />
+                  <p class="opi-p">North Korea</p>
+                </span>
+                <span class="option" data-value="korea_south"
+                  ><img class="opi" src="svg/kor.svg" alt="" />
+                  <p class="opi-p">South Korea</p>
+                </span>
+                <span class="option" data-value="kuwait"
+                  ><img class="opi" src="svg/kwt.svg" alt="" />
+                  <p class="opi-p">Kuwait</p>
+                </span>
+                <span class="option" data-value="kyrgyzstan"
+                  ><img class="opi" src="svg/kgz.svg" alt="" />
+                  <p class="opi-p">Kyrgyzstan</p>
+                </span>
+                <span class="option" data-value="laos"
+                  ><img class="opi" src="svg/lao.svg" alt="" />
+                  <p class="opi-p">Laos</p>
+                </span>
+                <span class="option" data-value="latvia"
+                  ><img class="opi" src="svg/lva.svg" alt="" />
+                  <p class="opi-p">Latvia</p>
+                </span>
+                <span class="option" data-value="lebanon"
+                  ><img class="opi" src="svg/lbn.svg" alt="" />
+                  <p class="opi-p">Lebanon</p>
+                </span>
+                <span class="option" data-value="lesotho"
+                  ><img class="opi" src="svg/lso.svg" alt="" />
+                  <p class="opi-p">Lesotho</p>
+                </span>
+                <span class="option" data-value="liberia"
+                  ><img class="opi" src="svg/lbr.svg" alt="" />
+                  <p class="opi-p">Liberia</p>
+                </span>
+                <span class="option" data-value="libya"
+                  ><img class="opi" src="svg/lby.svg" alt="" />
+                  <p class="opi-p">Libya</p>
+                </span>
+                <span class="option" data-value="liechtenstein"
+                  ><img class="opi" src="svg/lie.svg" alt="" />
+                  <p class="opi-p">Liechtenstein</p>
+                </span>
+                <span class="option" data-value="lithuania"
+                  ><img class="opi" src="svg/ltu.svg" alt="" />
+                  <p class="opi-p">Lithuania</p>
+                </span>
+                <span class="option" data-value="luxembourg"
+                  ><img class="opi" src="svg/lux.svg" alt="" />
+                  <p class="opi-p">Luxembourg</p>
+                </span>
+                <span class="option" data-value="madagascar"
+                  ><img class="opi" src="svg/mdg.svg" alt="" />
+                  <p class="opi-p">Madagascar</p>
+                </span>
+                <span class="option" data-value="malawi"
+                  ><img class="opi" src="svg/mwi.svg" alt="" />
+                  <p class="opi-p">Malawi</p>
+                </span>
+                <span class="option" data-value="malaysia"
+                  ><img class="opi" src="svg/mys.svg" alt="" />
+                  <p class="opi-p">Malaysia</p>
+                </span>
+                <span class="option" data-value="maldives"
+                  ><img class="opi" src="svg/mdv.svg" alt="" />
+                  <p class="opi-p">Maldives</p>
+                </span>
+                <span class="option" data-value="mali"
+                  ><img class="opi" src="svg/mli.svg" alt="" />
+                  <p class="opi-p">Mali</p>
+                </span>
+                <span class="option" data-value="malta"
+                  ><img class="opi" src="svg/mlt.svg" alt="" />
+                  <p class="opi-p">Malta</p>
+                </span>
+                <span class="option" data-value="marshall_islands"
+                  ><img class="opi" src="svg/mhl.svg" alt="" />
+                  <p class="opi-p">Marshall Islands</p>
+                </span>
+                <span class="option" data-value="mauritania"
+                  ><img class="opi" src="svg/mrt.svg" alt="" />
+                  <p class="opi-p">Mauritania</p>
+                </span>
+                <span class="option" data-value="mauritius"
+                  ><img class="opi" src="svg/mus.svg" alt="" />
+                  <p class="opi-p">Mauritius</p>
+                </span>
+                <span class="option" data-value="mexico"
+                  ><img class="opi" src="svg/mex.svg" alt="" />
+                  <p class="opi-p">Mexico</p>
+                </span>
+                <span class="option" data-value="micronesia"
+                  ><img class="opi" src="svg/fsm.svg" alt="" />
+                  <p class="opi-p">Micronesia</p>
+                </span>
+                <span class="option" data-value="moldova"
+                  ><img class="opi" src="svg/mda.svg" alt="" />
+                  <p class="opi-p">Moldova</p>
+                </span>
+                <span class="option" data-value="monaco"
+                  ><img class="opi" src="svg/mco.svg" alt="" />
+                  <p class="opi-p">Monaco</p>
+                </span>
+                <span class="option" data-value="mongolia"
+                  ><img class="opi" src="svg/mng.svg" alt="" />
+                  <p class="opi-p">Mongolia</p>
+                </span>
+                <span class="option" data-value="montenegro"
+                  ><img class="opi" src="svg/mne.svg" alt="" />
+                  <p class="opi-p">Montenegro</p>
+                </span>
+                <span class="option" data-value="morocco"
+                  ><img class="opi" src="svg/mar.svg" alt="" />
+                  <p class="opi-p">Morocco</p>
+                </span>
+                <span class="option" data-value="mozambique"
+                  ><img class="opi" src="svg/moz.svg" alt="" />
+                  <p class="opi-p">Mozambique</p>
+                </span>
+                <span class="option" data-value="myanmar"
+                  ><img class="opi" src="svg/mmr.svg" alt="" />
+                  <p class="opi-p">Myanmar</p>
+                </span>
+                <span class="option" data-value="namibia"
+                  ><img class="opi" src="svg/nam.svg" alt="" />
+                  <p class="opi-p">Namibia</p>
+                </span>
+                <span class="option" data-value="nauru"
+                  ><img class="opi" src="svg/nru.svg" alt="" />
+                  <p class="opi-p">Nauru</p>
+                </span>
+                <span class="option" data-value="nepal"
+                  ><img class="opi" src="svg/npl.svg" alt="" />
+                  <p class="opi-p">Nepal</p>
+                </span>
+                <span class="option" data-value="netherlands"
+                  ><img class="opi" src="svg/nld.svg" alt="" />
+                  <p class="opi-p">Netherlands</p>
+                </span>
+                <span class="option" data-value="new_zealand"
+                  ><img class="opi" src="svg/nzl.svg" alt="" />
+                  <p class="opi-p">New Zealand</p>
+                </span>
+                <span class="option" data-value="nicaragua"
+                  ><img class="opi" src="svg/nic.svg" alt="" />
+                  <p class="opi-p">Nicaragua</p>
+                </span>
+                <span class="option" data-value="niger"
+                  ><img class="opi" src="svg/ner.svg" alt="" />
+                  <p class="opi-p">Niger</p>
+                </span>
+                <span class="option" data-value="nigeria"
+                  ><img class="opi" src="svg/nga.svg" alt="" />
+                  <p class="opi-p">Nigeria</p>
+                </span>
+                <span class="option" data-value="north_macedonia"
+                  ><img class="opi" src="svg/mkd.svg" alt="" />
+                  <p class="opi-p">North Macedonia</p>
+                </span>
+                <span class="option" data-value="norway"
+                  ><img class="opi" src="svg/nor.svg" alt="" />
+                  <p class="opi-p">Norway</p>
+                </span>
+                <span class="option" data-value="oman"
+                  ><img class="opi" src="svg/omn.svg" alt="" />
+                  <p class="opi-p">Oman</p>
+                </span>
+                <span class="option" data-value="pakistan"
+                  ><img class="opi" src="svg/pak.svg" alt="" />
+                  <p class="opi-p">Pakistan</p>
+                </span>
+                <span class="option" data-value="palau"
+                  ><img class="opi" src="svg/plw.svg" alt="" />
+                  <p class="opi-p">Palau</p>
+                </span>
+                <span class="option" data-value="panama"
+                  ><img class="opi" src="svg/pan.svg" alt="" />
+                  <p class="opi-p">Panama</p>
+                </span>
+                <span class="option" data-value="papua_new_guinea"
+                  ><img class="opi" src="svg/png.svg" alt="" />
+                  <p class="opi-p">Papua New Guinea</p>
+                </span>
+                <span class="option" data-value="paraguay"
+                  ><img class="opi" src="svg/pry.svg" alt="" />
+                  <p class="opi-p">Paraguay</p>
+                </span>
+                <span class="option" data-value="peru"
+                  ><img class="opi" src="svg/per.svg" alt="" />
+                  <p class="opi-p">Peru</p>
+                </span>
+                <span class="option" data-value="philippines"
+                  ><img class="opi" src="svg/phl.svg" alt="" />
+                  <p class="opi-p">Philippines</p>
+                </span>
+                <span class="option" data-value="poland"
+                  ><img class="opi" src="svg/pol.svg" alt="" />
+                  <p class="opi-p">Poland</p>
+                </span>
+                <span class="option" data-value="portugal"
+                  ><img class="opi" src="svg/prt.svg" alt="" />
+                  <p class="opi-p">Portugal</p>
+                </span>
+                <span class="option" data-value="qatar"
+                  ><img class="opi" src="svg/qat.svg" alt="" />
+                  <p class="opi-p">Qatar</p>
+                </span>
+                <span class="option" data-value="romania"
+                  ><img class="opi" src="svg/rou.svg" alt="" />
+                  <p class="opi-p">Romania</p>
+                </span>
+                <span class="option" data-value="russia"
+                  ><img class="opi" src="svg/rus.svg" alt="" />
+                  <p class="opi-p">Russia</p>
+                </span>
+                <span class="option" data-value="rwanda"
+                  ><img class="opi" src="svg/rwa.svg" alt="" />
+                  <p class="opi-p">Rwanda</p>
+                </span>
+
+                <span class="option" data-value="saint_kitts_and_nevis"
+                  ><img class="opi" src="svg/kna.svg" alt="" />
+                  <p class="opi-p">Saint Kitts and Nevis</p></span
+                >
+                <span class="option" data-value="saint_lucia"
+                  ><img class="opi" src="svg/lca.svg" alt="" />
+                  <p class="opi-p">Saint Lucia</p></span
+                >
+                <span
+                  class="option"
+                  data-value="saint_vincent_and_the_grenadines"
+                  ><img class="opi" src="svg/vct.svg" alt="" />
+                  <p class="opi-p">Saint Vincent and the Grenadines</p></span
+                >
+                <span class="option" data-value="samoa"
+                  ><img class="opi" src="svg/wsm.svg" alt="" />
+                  <p class="opi-p">Samoa</p></span
+                >
+                <span class="option" data-value="san_marino"
+                  ><img class="opi" src="svg/smr.svg" alt="" />
+                  <p class="opi-p">San Marino</p></span
+                >
+                <span class="option" data-value="sao_tome_and_principe"
+                  ><img class="opi" src="svg/stp.svg" alt="" />
+                  <p class="opi-p">Sao Tome and Principe</p></span
+                >
+                <span class="option" data-value="saudi_arabia"
+                  ><img class="opi" src="svg/sau.svg" alt="" />
+                  <p class="opi-p">Saudi Arabia</p></span
+                >
+                <span class="option" data-value="senegal"
+                  ><img class="opi" src="svg/sen.svg" alt="" />
+                  <p class="opi-p">Senegal</p></span
+                >
+                <span class="option" data-value="serbia"
+                  ><img class="opi" src="svg/srb.svg" alt="" />
+                  <p class="opi-p">Serbia</p></span
+                >
+                <span class="option" data-value="seychelles"
+                  ><img class="opi" src="svg/syc.svg" alt="" />
+                  <p class="opi-p">Seychelles</p></span
+                >
+                <span class="option" data-value="sierra_leone"
+                  ><img class="opi" src="svg/sle.svg" alt="" />
+                  <p class="opi-p">Sierra Leone</p></span
+                >
+                <span class="option" data-value="singapore"
+                  ><img class="opi" src="svg/sgp.svg" alt="" />
+                  <p class="opi-p">Singapore</p></span
+                >
+                <span class="option" data-value="slovakia"
+                  ><img class="opi" src="svg/svk.svg" alt="" />
+                  <p class="opi-p">Slovakia</p></span
+                >
+                <span class="option" data-value="slovenia"
+                  ><img class="opi" src="svg/svn.svg" alt="" />
+                  <p class="opi-p">Slovenia</p></span
+                >
+                <span class="option" data-value="solomon_islands"
+                  ><img class="opi" src="svg/slb.svg" alt="" />
+                  <p class="opi-p">Solomon Islands</p></span
+                >
+                <span class="option" data-value="somalia"
+                  ><img class="opi" src="svg/som.svg" alt="" />
+                  <p class="opi-p">Somalia</p></span
+                >
+                <span class="option" data-value="south_africa"
+                  ><img class="opi" src="svg/zaf.svg" alt="" />
+                  <p class="opi-p">South Africa</p></span
+                >
+                <span class="option" data-value="south_sudan"
+                  ><img class="opi" src="svg/ssd.svg" alt="" />
+                  <p class="opi-p">South Sudan</p></span
+                >
+                <span class="option" data-value="spain"
+                  ><img class="opi" src="svg/esp.svg" alt="" />
+                  <p class="opi-p">Spain</p></span
+                >
+                <span class="option" data-value="sri_lanka"
+                  ><img class="opi" src="svg/lka.svg" alt="" />
+                  <p class="opi-p">Sri Lanka</p></span
+                >
+                <span class="option" data-value="sudan"
+                  ><img class="opi" src="svg/sdn.svg" alt="" />
+                  <p class="opi-p">Sudan</p></span
+                >
+                <span class="option" data-value="suriname"
+                  ><img class="opi" src="svg/sur.svg" alt="" />
+                  <p class="opi-p">Suriname</p></span
+                >
+                <span class="option" data-value="sweden"
+                  ><img class="opi" src="svg/swe.svg" alt="" />
+                  <p class="opi-p">Sweden</p></span
+                >
+                <span class="option" data-value="switzerland"
+                  ><img class="opi" src="svg/che.svg" alt="" />
+                  <p class="opi-p">Switzerland</p></span
+                >
+                <span class="option" data-value="syria"
+                  ><img class="opi" src="svg/syr.svg" alt="" />
+                  <p class="opi-p">Syria</p></span
+                >
+                <span class="option" data-value="taiwan"
+                  ><img class="opi" src="svg/twn.svg" alt="" />
+                  <p class="opi-p">Taiwan</p></span
+                >
+                <span class="option" data-value="tajikistan"
+                  ><img class="opi" src="svg/tjk.svg" alt="" />
+                  <p class="opi-p">Tajikistan</p></span
+                >
+                <span class="option" data-value="tanzania"
+                  ><img class="opi" src="svg/tza.svg" alt="" />
+                  <p class="opi-p">Tanzania</p></span
+                >
+                <span class="option" data-value="thailand"
+                  ><img class="opi" src="svg/tha.svg" alt="" />
+                  <p class="opi-p">Thailand</p></span
+                >
+                <span class="option" data-value="timor_leste"
+                  ><img class="opi" src="svg/tls.svg" alt="" />
+                  <p class="opi-p">Timor-Leste</p></span
+                >
+                <span class="option" data-value="togo"
+                  ><img class="opi" src="svg/tgo.svg" alt="" />
+                  <p class="opi-p">Togo</p></span
+                >
+                <span class="option" data-value="tonga"
+                  ><img class="opi" src="svg/ton.svg" alt="" />
+                  <p class="opi-p">Tonga</p></span
+                >
+                <span class="option" data-value="trinidad_and_tobago"
+                  ><img class="opi" src="svg/tto.svg" alt="" />
+                  <p class="opi-p">Trinidad and Tobago</p></span
+                >
+                <span class="option" data-value="tunisia"
+                  ><img class="opi" src="svg/tun.svg" alt="" />
+                  <p class="opi-p">Tunisia</p></span
+                >
+                <span class="option" data-value="turkey"
+                  ><img class="opi" src="svg/tur.svg" alt="" />
+                  <p class="opi-p">Turkey</p></span
+                >
+                <span class="option" data-value="turkmenistan"
+                  ><img class="opi" src="svg/tkm.svg" alt="" />
+                  <p class="opi-p">Turkmenistan</p></span
+                >
+                <span class="option" data-value="tuvalu"
+                  ><img class="opi" src="svg/tuv.svg" alt="" />
+                  <p class="opi-p">Tuvalu</p></span
+                >
+                <span class="option" data-value="uganda"
+                  ><img class="opi" src="svg/uga.svg" alt="" />
+                  <p class="opi-p">Uganda</p></span
+                >
+                <span class="option" data-value="ukraine"
+                  ><img class="opi" src="svg/ukr.svg" alt="" />
+                  <p class="opi-p">Ukraine</p></span
+                >
+                <span class="option" data-value="united_arab_emirates"
+                  ><img class="opi" src="svg/are.svg" alt="" />
+                  <p class="opi-p">United Arab Emirates</p></span
+                >
+                <span class="option" data-value="united_kingdom"
+                  ><img class="opi" src="svg/gbr.svg" alt="" />
+                  <p class="opi-p">United Kingdom</p></span
+                >
+                <span class="option" data-value="united_states"
+                  ><img class="opi" src="svg/usa.svg" alt="" />
+                  <p class="opi-p">United States</p></span
+                >
+                <span class="option" data-value="uruguay"
+                  ><img class="opi" src="svg/ury.svg" alt="" />
+                  <p class="opi-p">Uruguay</p></span
+                >
+                <span class="option" data-value="uzbekistan"
+                  ><img class="opi" src="svg/uzb.svg" alt="" />
+                  <p class="opi-p">Uzbekistan</p></span
+                >
+                <span class="option" data-value="vanuatu"
+                  ><img class="opi" src="svg/vut.svg" alt="" />
+                  <p class="opi-p">Vanuatu</p></span
+                >
+                <span class="option" data-value="venezuela"
+                  ><img class="opi" src="svg/ven.svg" alt="" />
+                  <p class="opi-p">Venezuela</p></span
+                >
+                <span class="option" data-value="vietnam"
+                  ><img class="opi" src="svg/vnm.svg" alt="" />
+                  <p class="opi-p">Vietnam</p></span
+                >
+                <span class="option" data-value="yemen"
+                  ><img class="opi" src="svg/yem.svg" alt="" />
+                  <p class="opi-p">Yemen</p></span
+                >
+                <span class="option" data-value="zambia"
+                  ><img class="opi" src="svg/zmb.svg" alt="" />
+                  <p class="opi-p">Zambia</p></span
+                >
+                <span class="option" data-value="zimbabwe"
+                  ><img class="opi" src="svg/zwe.svg" alt="" />
+                  <p class="opi-p">Zimbabwe</p></span
+                >
+              </div>
+            </div>
+          </span>
+          <input
+            hidden
+            type="text"
+            data-error="<%= error %>"
+            data-f_name="<%= f_name %>"
+            data-l_name="<%= l_name %>"
+            data-username="<%= username %>"
+            data-token="<%= token %>"
+            data-email="<%= email %>"
+            data-number="<%= number %>"
+            data-desc="<%= desc %>"
+            name="c"
+            id="c"
+          />
+          <input
+            type="number"
+            id="number"
+            name="number"
+            pattern="[0-9]{10, 13}"
+            placeholder="Contact Number"
+            webkitInnerSpinButton="none"
+          />
+        </span>
+        <span class="two_block">
+          <input
+            type="text"
+            name="p1"
+            id="p1"
+            required
+            pattern="[a-zA-Z ]{3,30}"
+            placeholder="Profession 1 *"
+          />
+          <input
+            type="text"
+            name="p2"
+            id="p2"
+            pattern="[a-zA-Z ]{3,30}"
+            placeholder="Profession 2"
+          />
+        </span>
+        <span class="two_block">
+          <input
+            type="text"
+            name="p3"
+            id="p3"
+            pattern="[a-zA-Z ]{3,30}"
+            placeholder="Profession 3"
+          />
+          <input
+            type="text"
+            name="p4"
+            id="p4"
+            pattern="[a-zA-Z ]{3,30}"
+            placeholder="Profession 4"
+          />
+        </span>
+        <textarea
+          name="Description"
+          id="desc"
+          rows="5"
+          placeholder="Description *"
+          required
+          pattern="[a-zA-Z0-9]{3,12}"
+        ></textarea>
+      </form>
+      <button class="form_submit" onclick="submit_form()">Submit form</button>
+      <p class="form_more"></p>
     </div>
     <div class="error_box hidden">
-        <img src="media/svg/error.svg" alt="">
-        <p id="error_msg">Something went wrong</p>
+      <img src="media/svg/error.svg" alt="" />
+      <p id="error_msg">Something went wrong</p>
     </div>
     <script>
-         function close(){
-                setTimeout(() => {
-                    box.classList.add("hidden");
-                }, 2000);
-            }
-            const error = document.getElementById("error_msg"); // use getElementById instead
-            const box = document.querySelector(".error_box"); // use querySelector instead
-        function open1(){
-            document.querySelector('#options-image').setAttribute("style", "Rotate:-90deg")
-            document.querySelector(".options-mask").classList.remove("option-mask-hidden")
+      function close() {
+        setTimeout(() => {
+          box.classList.add("hidden");
+        }, 2000);
+      }
+      const error = document.getElementById("error_msg"); // use getElementById instead
+      const box = document.querySelector(".error_box"); // use querySelector instead
+      function open1() {
+        document
+          .querySelector("#options-image")
+          .setAttribute("style", "Rotate:-90deg");
+        document
+          .querySelector(".options-mask")
+          .classList.remove("option-mask-hidden");
+      }
+
+      function close1() {
+        document
+          .querySelector("#options-image")
+          .setAttribute("style", "Rotate:90deg");
+        document
+          .querySelector(".options-mask")
+          .classList.add("option-mask-hidden");
+      }
+
+      function select_options() {
+        let value = document.querySelector(".options-mask").classList;
+        let yes = value.value.indexOf("option-mask-hidden");
+        if (yes == -1) {
+          close1();
+        } else {
+          open1();
         }
-        
-        function close1(){
-            document.querySelector('#options-image').setAttribute("style", "Rotate:90deg")
-            document.querySelector(".options-mask").classList.add("option-mask-hidden")
+      }
+      document.querySelector(".options-mask").addEventListener("Click", () => {
+        close1();
+      });
+      let options = document.querySelectorAll(".option");
+      options.forEach((e) => {
+        e.addEventListener("click", () => {
+          let a = e.innerHTML;
+          const ca = e.getAttribute("data-value");
+          document.querySelector("#c").setAttribute("value", ca);
+          console.log(ca);
+          document.querySelector(".selected").innerHTML = a;
+        });
+      });
+      document.querySelector(".country").addEventListener("click", () => {
+        select_options();
+      });
+
+      function submit_form() {
+        const username = document.getElementById("username").value;
+        const name = document.getElementById("first_name").value;
+        const p1 = document.getElementById("p1").value;
+        const email = document.getElementById("email").value;
+        const country = document.querySelector("#c").value;
+        const token = document.querySelector("#token").value;
+
+        console.log(country);
+
+        if (!name) {
+          error.innerText = "First name is required";
+          box.classList.remove("hidden");
+          close();
+        } else if (!username) {
+          error.innerText = "Username is required";
+          box.classList.remove("hidden");
+          close();
+        } else if (username.length < 3) {
+          error.innerText = "Username is too short";
+          box.classList.remove("hidden");
+          close();
+        } else if (!email) {
+          error.innerText = "Email is required";
+          box.classList.remove("hidden");
+          close();
+        } else if (!token) {
+          error.innerText = "Token is required";
+          box.classList.remove("hidden");
+          close();
+        } else if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+          error.innerText = "Email is not valid";
+          box.classList.remove("hidden");
+          close();
+        } else if (!country) {
+          error.innerText = "Country is required";
+          box.classList.remove("hidden");
+          close();
+        } else if (!p1) {
+          error.innerText = "Profession 1 is required";
+          box.classList.remove("hidden");
+          close();
+        } else {
+          document.querySelector(".form_box").submit();
         }
-        function select_options(){
-            let value = document.querySelector(".options-mask").classList
-            let yes = value.value.indexOf("option-mask-hidden")
-            if(yes == -1){
-                close1()
-            }
-            else{
-                open1()
-            }
+      }
+      window.onload = () => {
+        let c = document.querySelector("#c");
+        let f = c.getAttribute("data-f_name");
+        let l = c.getAttribute("data-l_name");
+        let username = c.getAttribute("data-username");
+        let email = c.getAttribute("data-email");
+        let token = c.getAttribute("data-token");
+        let number = c.getAttribute("data-number");
+        let desc = c.getAttribute("data-desc");
+        let err = c.getAttribute("data-error");
+        if (err == " ") {
+          console.log("no error found");
+        } else {
+          console.log(err);
+          error.innerText = err;
+          box.classList.remove("hidden");
+          close();
         }
-        document.querySelector(".options-mask").addEventListener("Click",()=>{
-            close1()
-        })
-        let options = document.querySelectorAll(".option")
-        options.forEach((e)=>{
-            e.addEventListener("click", ()=>{
-                let a = e.innerHTML
-                const ca = e.getAttribute("data-value");
-                document.querySelector("#c").setAttribute("value", ca)
-                console.log(ca);
-                document.querySelector(".selected").innerHTML = a
-            })
-        })
-        document.querySelector(".country").addEventListener("click", ()=>{
-            select_options()
-        })
-        function submit_form(){
-            const username = document.getElementById("username").value;
-            const name = document.getElementById("first_name").value;
-            const p1 = document.getElementById("p1").value;
-            const email = document.getElementById("email").value;
-            const country = document.querySelector("#c").value
-            const token = document.querySelector("#token").value;
- 
-            console.log(country);
-          
-            if(!name){
-                error.innerText = "First name is required";
-                box.classList.remove("hidden");
-                close()
-            }
-            else if (!username) {
-                error.innerText = "Username is required";
-                box.classList.remove("hidden");
-                close()
-            }
-            else if (username.length < 3) {
-                error.innerText = "Username is too short";
-                box.classList.remove("hidden");
-                close()
-            }
-            else if (!email) {
-                error.innerText = "Email is required";
-                box.classList.remove("hidden");
-                close()
-            }
-            else if (!token) {
-                error.innerText = "Token is required";
-                box.classList.remove("hidden");
-                close()
-            }
-            else if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
-                error.innerText = "Email is not valid";
-                box.classList.remove("hidden");
-                close()
-            }
-            else if(!country){
-                error.innerText = "Country is required";
-                box.classList.remove("hidden");
-                close()
-            }
-            else if(!p1){
-                error.innerText = "Profession 1 is required";
-                box.classList.remove("hidden");
-                close()
-            }
-            else{
-                document.querySelector(".form_box").submit()
-            }
-        }
-        window.onload= () => {
-            let c = document.querySelector("#c")
-            let f = c.getAttribute("data-f_name")
-            let l = c.getAttribute("data-l_name")
-            let username = c.getAttribute("data-username")
-            let email = c.getAttribute("data-email")
-            let token = c.getAttribute("data-token")
-            let number = c.getAttribute("data-number")
-            let desc = c.getAttribute("data-desc")
-            let err = c.getAttribute("data-error")
-            if(err == " "){
-                console.log("no error found");
-            }
-            else{
-                console.log(err);
-                error.innerText = err;
-                box.classList.remove("hidden");
-                close()
-            }
-            document.getElementById("first_name").value = f
-            document.getElementById("last_name").value = l
-            document.getElementById("username").value = username
-            document.getElementById("token").value = token
-            document.getElementById("email").value = email
-            document.getElementById("number").value = number
-            document.getElementById("desc").value = desc
-        }
+        document.getElementById("first_name").value = f;
+        document.getElementById("last_name").value = l;
+        document.getElementById("username").value = username;
+        document.getElementById("token").value = token;
+        document.getElementById("email").value = email;
+        document.getElementById("number").value = number;
+        document.getElementById("desc").value = desc;
+      };
     </script>
-</body>
+  </body>
 </html>
