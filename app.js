@@ -3,8 +3,7 @@ import express from "express"
 import User from './user.js';
 const app = express()
 const port = 3000
-mongoose.connect('mongodb+srv://drkvoid07:tuu6sc1OHXLTwu5o@serve1.fmyl3.mongodb.net/')
-// mongoose.connect("mongodb://localhost:27017/")
+mongoose.connect("mongodb://localhost:27017/")
 app.use(express.json()) //accepts data in json format
 app.use(express.urlencoded()) //this is to decode data sent by form
 app.use(express.static("views"))
