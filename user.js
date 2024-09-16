@@ -1,4 +1,3 @@
-
 import mongoose, { Schema } from "mongoose";
 
 const userSchema = new Schema({
@@ -25,6 +24,7 @@ const userSchema = new Schema({
     },
     is_Staff: Boolean,
     is_verified: Boolean,
+    is_edited:Boolean,
     staff_info:{
         desc:{
           type: String,
@@ -36,16 +36,16 @@ const userSchema = new Schema({
         profession_4: String,
         experience: String,
         education: String,
-        rating:{
-            all: [],
-            average:Number
-        },
-        previous_record: [],
         token:{
             type: String,
             default: '',
         }
     },
+    rating:{
+        all: [],
+        average:Number
+    },
+    previous_record: [],
     rated:[],
     registration:{
         token: String,
